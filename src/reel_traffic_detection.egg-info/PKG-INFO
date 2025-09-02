@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: reel-traffic-detection
+Version: 0.1.0
+Summary: Real-time Detection of Reel vs Non-Reel Traffic in Social Networking Applications
+Home-page: https://github.com/yourusername/reel-traffic-detection
+Author: Your Name
+Author-email: Your Name <your@email.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: joblib
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# Reel Traffic vs Non-Reel Traffic Detection
+
+This project provides a real-time AI model that classifies **video traffic (reels/shorts)** vs **non-video traffic (feeds/suggestions)** in a social networking application.
+
+## 📌 Features
+- Real-time inference on packet metadata (no payload inspection).
+- Works under varying network conditions (congestion, latency, packet loss).
+- Lightweight for mobile devices (low CPU & RAM).
+
+## 📂 Repo Structure
+- `docs/` → All technical documentation in Markdown.
+- `src/` → Source code for training + real-time inference.
+- `models/` → Hugging Face model links or trained weights.
+- `datasets/` → Datasets used/published.
+- `requirements.txt` → Python dependencies.
+- `setup.py` → Package installer.
+
+## 🚀 Quickstart
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Train baseline model
+python src/models/train.py --data sample_packets.csv
+
+# Run real-time detector (demo)
+python src/app/demo_service.py --pcap sample.pcap

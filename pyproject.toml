@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "src"
+]
+markers = [
+    "integration: marks tests as integration (end-to-end pipeline)",
+    "unit: marks fast, isolated tests"
+]
