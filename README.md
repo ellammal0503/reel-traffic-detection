@@ -51,7 +51,7 @@ reel-traffic-detection/
 ## ⚙️ Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/reel-traffic-detection.git
+   git clone https://github.com/ellammal0503/reel-traffic-detection.git
    cd reel-traffic-detection
 
 Create and activate a virtual environment:
