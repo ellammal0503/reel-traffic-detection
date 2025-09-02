@@ -2,12 +2,12 @@
 
 This project provides a real-time AI model that classifies **video traffic (reels/shorts)** vs **non-video traffic (feeds/suggestions)** in a social networking application.
 
-## 📌 Features
+##  Features
 - Real-time inference on packet metadata (no payload inspection).
 - Works under varying network conditions (congestion, latency, packet loss).
 - Lightweight for mobile devices (low CPU & RAM).
 
-## 📂 Repo Structure
+## Repo Structure
 - `docs/` → All technical documentation in Markdown.
 - `src/` → Source code for training + real-time inference.
 - `models/` → Hugging Face model links or trained weights.
@@ -15,7 +15,7 @@ This project provides a real-time AI model that classifies **video traffic (reel
 - `requirements.txt` → Python dependencies.
 - `setup.py` → Package installer.
 
-## 🚀 Quickstart
+##  Quickstart
 ```bash
 # Install dependencies
 pip install -r requirements.txt
@@ -28,13 +28,13 @@ python src/app/demo_service.py --pcap sample.pcap
 
 # Reel Traffic Detection (AI Challenge Project)
 
-## 🎯 Project Goal
+##  Project Goal
 This project detects whether network traffic belongs to **Reel/Video streams** or **Non-Reel traffic** in real-time using Machine Learning (ML).  
 It extracts statistical features from packet captures (pcaps) and performs classification with a trained ML model.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 reel-traffic-detection/
 │── src/ # Source code
 │ ├── data/ # Preprocessing, feature extraction
@@ -82,9 +82,75 @@ python detect.py --source data/sample_video.mp4 --output output_detected.mp4
 
 
 
+(venv) (base) karthickkumarasamy@Karthicks-MacBook-Air reel-traffic-detection %
+python demo_inference.py --mode yolo --data data/MGR.mp4
 
-(venv) (base) karthickkumarasamy@Karthicks-MacBook-Air reel-traffic-detection % python demo_inference.py --mode yolo --data data/sample_traffic.mp4
-(venv) (base) karthickkumarasamy@Karthicks-MacBook-Air reel-traffic-detection % python demo_inference.py --mode ml --data datasets/traffic_dataset.csv
+: 384x640 8 persons, 3 cups, 29.9ms
+Speed: 0.5ms preprocess, 29.9ms inference, 0.8ms postprocess per image at shape (1, 3, 384, 640)
+
+0: 384x640 4 persons, 2 cups, 30.7ms
+Speed: 0.5ms preprocess, 30.7ms inference, 0.5ms postprocess per image at shape (1, 3, 384, 640)
+
+0: 384x640 6 persons, 3 cups, 30.4ms
+Speed: 0.5ms preprocess, 30.4ms inference, 0.6ms postprocess per image at shape (1, 3, 384, 640)
+
+📊 Detection Summary:
+  person: 4623
+  tie: 55
+  chair: 101
+  umbrella: 38
+  handbag: 3
+  cell phone: 3
+  baseball glove: 3
+  remote: 3
+  dining table: 94
+  laptop: 25
+  cup: 56
+  tv: 2
+  book: 2
+  train: 6
+  bed: 3
+  cake: 4
+  potted plant: 28
+  bus: 29
+  car: 5
+  parking meter: 2
+  truck: 4
+  traffic light: 1
+  bottle: 8
+  bird: 2
+  cow: 2
+🚦 YOLO Traffic Detection Complete
+   person: 4623
+   tie: 55
+   chair: 101
+   umbrella: 38
+   handbag: 3
+   cell phone: 3
+   baseball glove: 3
+   remote: 3
+   dining table: 94
+   laptop: 25
+   cup: 56
+   tv: 2
+   book: 2
+   train: 6
+   bed: 3
+   cake: 4
+   potted plant: 28
+   bus: 29
+   car: 5
+   parking meter: 2
+   truck: 4
+   traffic light: 1
+   bottle: 8
+   bird: 2
+   cow: 2
+📂 Output saved to output_detected.mp4
+
+
+(venv) (base) karthickkumarasamy@Karthicks-MacBook-Air reel-traffic-detection %
+python demo_inference.py --mode ml --data datasets/traffic_dataset.csv
 
 
 🚀 Running ML Inference...
