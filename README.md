@@ -1,54 +1,64 @@
-# Reel Traffic vs Non-Reel Traffic Detection
+# 🎬 reel-traffic-detection  
 
-This project provides a real-time AI model that classifies **video traffic (reels/shorts)** vs **non-video traffic (feeds/suggestions)** in a social networking application.
+**AI-based system to detect video and non-video traffic in social networking apps in real-time**  
 
+---
 
-Demo Video Link - https://youtu.be/89NLqLwhEgU
-##  Features
-- Real-time inference on packet metadata (no payload inspection).
-- Works under varying network conditions (congestion, latency, packet loss).
-- Lightweight for mobile devices (low CPU & RAM).
+##  Description  
+This repository contains the implementation of an **AI model for real-time classification of social networking traffic** into **Reel/Video vs Non-Video**.  
+The project is part of the **Samsung EnnovateX 2025 AI Challenge**.  
 
-## Repo Structure
-- `docs/` → All technical documentation in Markdown.
-- `src/` → Source code for training + real-time inference.
-- `models/` → Hugging Face model links or trained weights.
-- `datasets/` → Datasets used/published.
-- `requirements.txt` → Python dependencies.
-- `setup.py` → Package installer.
+SNS apps (e.g., Instagram, Facebook, YouTube) transmit both **short videos/reels** and **non-video traffic (feeds, suggestions, browsing)** through the same data pipeline.  
+Our system enables **user equipment (UE)** to:  
 
-##  Quickstart
+-  Detect **Reel/Video vs Non-Video traffic in real-time**  
+-  Optimize device/network performance under **congestion & varying coverage**  
+-  Achieve **high classification accuracy** using hybrid ML/DL models  
+
+---
+
+##  Features  
+- **YOLOv8** for video frame/traffic pattern detection  
+- **MLP (Multi-Layer Perceptron)** for feature-based classification  
+- **Real-time inference pipeline** (`demo_inference.py`)  
+- **Evaluation metrics**: Accuracy, Precision, Recall, F1  
+- **Unit tests with Pytest** for reproducibility  
+
+---
+
+##  Problem Statement — *#9: Real-time Detection of Reel vs Non-Reel Traffic*  
+SNS applications (such as Facebook and YouTube) transmit both video (short videos, reels, etc.) and non-video traffic (feeds, suggestions, etc.) through the same data pipeline.  
+
+The challenge is to **develop an AI model** to differentiate **Reel/Video vs Non-Video traffic** in real-time, enabling **UE to optimize performance dynamically**, while ensuring **accuracy under varying network congestion and coverage conditions**.  
+
+---
+
+## 👥 Team  
+- **Team Name**: Solo Team  
+- **Team Member**: Karthick Kumarasamy  
+## 🎥 Demo Video  
+📺 [Watch Demo on YouTube](https://youtu.be/IzitpvzAcys)  
+
+---
+
+## 📂 Repository Structure  
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Train baseline model
-python src/models/train.py --data sample_packets.csv
-
-# Run real-time detector (demo)
-python src/app/demo_service.py --pcap sample.pcap
-
-# Reel Traffic Detection (AI Challenge Project)
-
-##  Project Goal
-This project detects whether network traffic belongs to **Reel/Video streams** or **Non-Reel traffic** in real-time using Machine Learning (ML).  
-It extracts statistical features from packet captures (pcaps) and performs classification with a trained ML model.
-
----
-
-## Project Structure
 reel-traffic-detection/
-│── src/ # Source code
-│ ├── data/ # Preprocessing, feature extraction
-│ ├── model/ # ML model training & inference
-│ └── reel_traffic_detection/ # Core package
-│
-│── tests/ # Unit & integration tests (pytest)
-│── models/ # Saved models and scalers
-│── pyproject.toml # Dependencies and pytest config
-│── README.md # Documentation (this file)
+│── datasets/                # Sample traffic datasets
+│── models/                  # Trained YOLOv8 & MLP models
+│── outputs/                 # Prediction results & demo videos
+│── src/                     # Core source code
+│   ├── feature_extractor.py
+│   ├── train_model.py       # Training scripts (YOLOv8 + MLP)
+│   ├── realtime_inference.py
+│   └── helpers.py
+│── tests/                   # Unit & integration tests
+│── demo_inference.py        # Script for demo inference
+│── requirements.txt         # Runtime dependencies
+│── requirements-dev.txt     # Dev dependencies (testing, linting)
+│── README.md                # Project documentation
 
----
+
 
 ## ⚙️ Installation
 1. Clone the repository:
