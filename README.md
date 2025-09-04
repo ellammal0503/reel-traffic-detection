@@ -37,7 +37,7 @@ The challenge is to **develop an AI model** to differentiate **Reel/Video vs Non
 - **Team Name**: Solo Team  
 - **Team Member**: Karthick Kumarasamy  
 ## 🎥 Demo Video  
-📺 [Watch Demo on YouTube](https://youtu.be/IzitpvzAcys)  
+📺 https://youtu.be/89NLqLwhEgU
 
 ---
 
