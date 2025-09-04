@@ -2,6 +2,8 @@
 
 This project provides a real-time AI model that classifies **video traffic (reels/shorts)** vs **non-video traffic (feeds/suggestions)** in a social networking application.
 
+
+Demo Video Link - https://youtu.be/89NLqLwhEgU
 ##  Features
 - Real-time inference on packet metadata (no payload inspection).
 - Works under varying network conditions (congestion, latency, packet loss).
